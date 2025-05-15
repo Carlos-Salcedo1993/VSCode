@@ -1,0 +1,42 @@
+{
+	"version": "2.0.0",
+	"command": "gulp",
+	"tasks": [
+		{
+			"label": "watch",
+			"type": "gulp",
+			"task": "watch",
+			"isBackground": true,
+			"problemMatcher": {
+				"owner": "typescript",
+				"fileLocation": [
+					"absolute"
+				],
+				"pattern": {
+					"regexp": "^\\*\\*\\* Error: ([^(]+)\\((\\d+|\\d+,\\d+|\\d+,\\d+,\\d+,\\d+)\\): (.*)$",
+					"file": 1,
+					"location": 2,
+					"message": 3
+				},
+				"watching": {
+					"beginsPattern": "^\\*\\*\\* Starting\\.\\.\\.$",
+					"endsPattern": "^\\*\\*\\* Finished"
+				}
+			},
+			"group": {
+				"_id": "build",
+				"isDefault": false
+			}
+		},
+		{
+			"label": "test",
+			"type": "gulp",
+			"task": "test",
+			"problemMatcher": [],
+			"group": {
+				"_id": "test",
+				"isDefault": false
+			}
+		}
+	]
+}
